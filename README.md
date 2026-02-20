@@ -1,4 +1,3 @@
 # Polimorfisme
 Fet per: 
-Carla Luján
-Marta Taberner
+Carla Luján i Marta Taberner

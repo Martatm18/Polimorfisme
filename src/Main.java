@@ -1,4 +1,4 @@
-public static void Main(String[] args) {
+void main() {
 
     Shape [] v = new Shape[4];
 
@@ -9,13 +9,17 @@ public static void Main(String[] args) {
 
     double res = sum(v);
 
+    System.out.println("El resultat de la suma és:");
     System.out.println("sum: " + res);
 
-}
- //print
-//suma
-// sort
+    System.out.println("Abans d'ordenar:");
+    print(v);
 
+    sort(v);  // Ordenem per àrea ascendent
+
+    System.out.println("Despres d'ordenar:");
+    print(v);
+}
 public static double sum(Shape[] v){
     double res = 0;
 
@@ -23,4 +27,14 @@ public static double sum(Shape[] v){
         res += s.area();
     }
     return res;
+}
+
+public static void print(Shape[] v) {
+    for (Shape s : v) {
+        System.out.println(s.getClass().getSimpleName() + " - area: " + s.area());
+    }
+}
+
+public static void sort(Shape[] v) {
+    Arrays.sort(v, Comparator.comparingDouble(Shape::area));
 }
